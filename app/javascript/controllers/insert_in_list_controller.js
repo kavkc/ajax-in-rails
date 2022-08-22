@@ -23,12 +23,12 @@ export default class extends Controller {
     fetch(url, options)
     .then(response => response.json())
     .then((data) => {
-      console.log("review", data.my_inserted_item)
-      console.log("review", data.my_form_item)
-      // if (data.inserted_item) {
-      //   this.itemsTarget.insertAdjacentHTML("beforeend", data.inserted_item)
-      // }
-      // this.formTarget.outerHTML = data.form
+      // console.log("review", data.my_inserted_item)
+      // console.log("review", data.my_form_item)
+      if (data.inserted_item) {
+        this.itemsTarget.insertAdjacentHTML("beforeend", data.inserted_item)
+      }
+      this.formTarget.outerHTML = data.form
     })
   }
 }
